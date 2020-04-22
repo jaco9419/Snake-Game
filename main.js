@@ -2,11 +2,9 @@ const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
 let score = 0;
-let gameSpeed = 100;
+let gameSpeed = 120;
 let dx = 10;
 let dy = 0;
-
-
 
 document.getElementById("start").addEventListener("click", getStarted);
 
@@ -46,19 +44,19 @@ document.getElementById("score").innerHTML = score;
 // EASY
 document.getElementById("easy").addEventListener("click", setEasy);
 function setEasy() {
-    gameSpeed = 100;
+  gameSpeed = 120;
 }
 
 // MEADIUM
 document.getElementById("medium").addEventListener("click", setMedium);
 function setMedium() {
-    gameSpeed = 70;
+  gameSpeed = 70;
 }
 
 // HARD
 document.getElementById("hard").addEventListener("click", setHard);
 function setHard() {
-    gameSpeed = 50;
+  gameSpeed = 40;
 }
 
 function drawSnakePart(snakePart) {
@@ -133,6 +131,7 @@ function changeDirection(event) {
   const goingDown = dy === 10;
   const goingRight = dx === 10;
   const goingLeft = dx === -10;
+
   if (keyPressed === LEFT_KEY && !goingRight) {
     dx = -10;
     dy = 0;
@@ -148,6 +147,40 @@ function changeDirection(event) {
   if (keyPressed === DOWN_KEY && !goingUp) {
     dx = 0;
     dy = 10;
+  }
+}
+
+// MOVEMENT FOR MOBILE MOSTLY, USING BOTTONS
+
+document.getElementById("up").addEventListener("click", moveUp);
+function moveUp() {
+  if (dy !== 10) {
+    dx = 0;
+    dy = -10;
+  }
+}
+
+document.getElementById("down").addEventListener("click", moveDown);
+function moveDown() {
+  if (dy !== -10) {
+    dx = 0;
+    dy = 10;
+  }
+}
+
+document.getElementById("right").addEventListener("click", moveRight);
+function moveRight() {
+  if (dx !== -10) {
+    dx = 10;
+    dy = 0;
+  }
+}
+
+document.getElementById("left").addEventListener("click", moveLeft);
+function moveLeft() {
+  if (dx !== 10) {
+    dx = -10;
+    dy = 0;
   }
 }
 
@@ -183,3 +216,19 @@ function didGameEnd() {
 
   return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall;
 }
+
+//BTN STYLES
+
+const tabItems = document.querySelectorAll(".difficulty-btn");
+
+function selectItem(e) {
+  removeActive();
+  this.classList.add("active");
+}
+
+function removeActive() {
+  tabItems.forEach((item) => item.classList.remove("active"));
+}
+
+//Listen for tab click
+tabItems.forEach((item) => item.addEventListener("click", selectItem));

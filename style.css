@@ -1,12 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+body {
+  font-family: "Righteous", cursive;
+  background: #486587;
+  color: #d1d9e1;
+}
+
+#score {
+  text-align: center;
+  margin: 0;
+  font-size: 40px;
+}
+
 .container {
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.btn-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+input {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  font: inherit;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 350px) {
+  .container {
+    height: 87vh;
+  }
+  input {
+    font-size: 12px;
+  }
+  .arrow-container {
+    margin-top: -10px;
+    padding: 0;
+  }
+  #gameCanvas {
+    margin-bottom: -10px;
+  }
+}
+
+.active {
+  color: #ff4418;
+}
+
+#start,
+#restart {
+  margin: 0 7.5px;
+}
+
+.difficulty {
+  text-align: center;
+  margin-left: 15px;
 }
 
 #gameCanvas {
-    border: 1px solid black;
-    padding: 0;
-    margin: 0;
+  box-shadow: 12px 12px 40px black;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+}
+
+.arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 50px;
+  margin: -10px 12px;
+}
+
+.blue-btn:hover,
+.blue-btn:active {
+  color: #d1d9e1;
 }

@@ -1,26 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/f16558b854.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Snake Game</title>
-</head>
-<body>
+  </head>
 
-    <div id="score"></div>
-
-    <input type="button" id="start" value="start">
-    <input type="button" id="restart" value="restart">
-    <input type="button" id="easy" value="easy">
-    <input type="button" id="medium" value="medium">
-    <input type="button" id="hard" value="hard">
-
+  <body>
     <div class="container">
-        <canvas id="gameCanvas" width="300" height="300"></canvas>
+      <div class="btn-container">
+        <div>
+          <p id="score"></p>
+          <div class="start-reset-container">
+            <input type="button" id="start" value="start" class="blue-btn" />
+            <input
+              type="button"
+              id="restart"
+              value="restart"
+              class="blue-btn"
+            />
+          </div>
+        </div>
+
+        <div class="difficulty">
+          <p>Level of difficulty:</p>
+          <input
+            type="button"
+            id="easy"
+            value="easy"
+            class="difficulty-btn active"
+          />
+          <input
+            type="button"
+            id="medium"
+            value="medium"
+            class="difficulty-btn"
+          />
+          <input type="button" id="hard" value="hard" class="difficulty-btn" />
+        </div>
+      </div>
+
+      <canvas id="gameCanvas" width="300" height="300"></canvas>
+
+      <div class="arrow-container">
+        <button id="up">
+          <i class="fas fa-arrow-alt-circle-up arrow-btn blue-btn"></i>
+        </button>
+
+        <div class="side-arrows">
+          <button id="left">
+            <i class="fas fa-arrow-alt-circle-left arrow-btn blue-btn"></i>
+          </button>
+          <button id="right">
+            <i class="fas fa-arrow-alt-circle-right arrow-btn blue-btn"></i>
+          </button>
+        </div>
+
+        <button id="down">
+          <i class="fas fa-arrow-alt-circle-down arrow-btn blue-btn"></i>
+        </button>
+      </div>
     </div>
 
     <script src="main.js"></script>
-
-</body>
+  </body>
 </html>
