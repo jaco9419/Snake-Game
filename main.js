@@ -85,11 +85,13 @@ function advanceSnake() {
     score += 10;
     document.getElementById("score").innerHTML = score;
     createFood();
+    playAudioBeep();
   } else {
     snake.pop();
   }
   if (didGameEnd()) {
     snake.push(tail);
+    playAudioFail();
   }
 }
 
@@ -230,5 +232,15 @@ function removeActive() {
   tabItems.forEach((item) => item.classList.remove("active"));
 }
 
-//Listen for tab click
 tabItems.forEach((item) => item.addEventListener("click", selectItem));
+
+//AUDIO
+function playAudioBeep () {
+  let audio = document.querySelector("#beep");
+  audio.play();
+}
+
+function playAudioFail () {
+  let audio = document.querySelector("#fail");
+  audio.play();
+}
