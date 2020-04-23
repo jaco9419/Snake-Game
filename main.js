@@ -235,12 +235,12 @@ function removeActive() {
 tabItems.forEach((item) => item.addEventListener("click", selectItem));
 
 //AUDIO
-function playAudioBeep () {
+function playAudioBeep() {
   let audio = document.querySelector("#beep");
   audio.play();
 }
 
-function playAudioFail () {
+function playAudioFail() {
   let audio = document.querySelector("#fail");
   audio.play();
 }

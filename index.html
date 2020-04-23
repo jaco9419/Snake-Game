@@ -17,12 +17,17 @@
         <div>
           <p id="score"></p>
           <div class="start-reset-container">
-            <input type="button" id="start" value="start" class="blue-btn" />
+            <input
+              type="button"
+              id="start"
+              value="start"
+              class="hovering-btn"
+            />
             <input
               type="button"
               id="restart"
               value="restart"
-              class="blue-btn"
+              class="hovering-btn"
             />
           </div>
         </div>
@@ -49,30 +54,30 @@
 
       <div class="arrow-container">
         <button id="up">
-          <i class="fas fa-arrow-alt-circle-up arrow-btn blue-btn"></i>
+          <i class="fas fa-arrow-alt-circle-up arrow-btn hovering-btn"></i>
         </button>
 
         <div class="side-arrows">
           <button id="left">
-            <i class="fas fa-arrow-alt-circle-left arrow-btn blue-btn"></i>
+            <i class="fas fa-arrow-alt-circle-left arrow-btn hovering-btn"></i>
           </button>
           <button id="right">
-            <i class="fas fa-arrow-alt-circle-right arrow-btn blue-btn"></i>
+            <i class="fas fa-arrow-alt-circle-right arrow-btn hovering-btn"></i>
           </button>
         </div>
 
         <button id="down">
-          <i class="fas fa-arrow-alt-circle-down arrow-btn blue-btn"></i>
+          <i class="fas fa-arrow-alt-circle-down arrow-btn hovering-btn"></i>
         </button>
       </div>
     </div>
 
     <audio id="beep">
-      <source src="beep.mp3" type="audio/wav"/>
+      <source src="beep.mp3" type="audio/wav" />
     </audio>
 
     <audio id="fail">
-      <source src="fail.mp3" type="audio/wav"/>
+      <source src="fail.mp3" type="audio/wav" />
     </audio>
 
     <script src="main.js"></script>
